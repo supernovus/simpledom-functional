@@ -1,0 +1,7 @@
+/doc
+/build
+/phpunit
+/phpdoc
+/composer.lock
+/composer-dev*
+/vendor

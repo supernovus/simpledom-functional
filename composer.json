@@ -1,0 +1,29 @@
+{
+  "name": "lum/simpledom-functional",
+  "type": "library",
+  "description": "Legacy global functions for SimpleDOM",
+  "homepage": "https://github.com/supernovus/simpledom-functional",
+  "license": "MIT",
+  "authors":
+  [
+    {
+      "name": "Timothy Totten",
+      "role": "Developer"
+    }
+  ],
+  "require":
+  {
+    "lum/simpledom": "^3.0"
+  },
+  "autoload":
+  {
+    "files": ["lib/Functions.php"]
+  },
+  "extra":
+  {
+    "branch-alias":
+    {
+      "dev-main": "3.x-dev"
+    }
+  }
+}
