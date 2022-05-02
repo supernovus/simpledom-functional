@@ -1,20 +1,15 @@
 <?php
 
+const SMPLDOM = 'SimpleDOM';
+
 /**
  * Alias for simplexml_load_file() that returns a SimpleDOM instance.
  *
  * @return SimpleDOM
  */
-function simpledom_load_file(string $filename): ?SimpleDOM
+function simpledom_load_file(string $filename): SimpleDOM|false
 {
-  $args = func_get_args();
-
-  if (isset($args[0]) && !isset($args[1]))
-  {
-    $args[1] = 'SimpleDOM';
-  }
-
-  return call_user_func_array('simplexml_load_file', $args);
+  return call_user_func('simplexml_load_file', $filename, SMPLDOM);
 }
 
 /**
@@ -22,16 +17,9 @@ function simpledom_load_file(string $filename): ?SimpleDOM
  *
  * @return SimpleDOM
  */
-function simpledom_load_string(string $string): ?SimpleDOM
+function simpledom_load_string(string $string): SimpleDOM|false
 {
-  $args = func_get_args();
-
-  if (isset($args[0]) && !isset($args[1]))
-  {
-    $args[1] = 'SimpleDOM';
-  }
-
-  return call_user_func_array('simplexml_load_string', $args);
+  return call_user_func('simplexml_load_string', $string, SMPLDOM);
 }
 
 /**
@@ -41,14 +29,7 @@ function simpledom_load_string(string $string): ?SimpleDOM
  */
 function simpledom_import_dom(object $dom): ?SimpleDOM
 {
-  $args = func_get_args();
-
-  if (isset($args[0]) && !isset($args[1]))
-  {
-    $args[1] = 'SimpleDOM';
-  }
-
-  return call_user_func_array('simplexml_import_dom', $args);
+  return call_user_func('simplexml_import_dom', $dom, SMPLDOM);
 }
 
 /**
@@ -59,5 +40,4 @@ function simpledom_import_simplexml(object $simplexml): ?SimpleDOM
   $dom = dom_import_simplexml($simplexml);
   return simpledom_import_dom($dom);
 }
-
 

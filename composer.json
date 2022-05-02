@@ -15,6 +15,10 @@
   {
     "lum/simpledom": "^3.0"
   },
+  "require-dev":
+  {
+    "phpunit/phpunit": "^9.0"
+  },
   "autoload":
   {
     "files": ["lib/Functions.php"]
